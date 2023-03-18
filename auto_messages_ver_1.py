@@ -19,7 +19,7 @@ skipped_rows = int(input("How many rows do you want to skip? "))
 
 start = datetime.now()
 
-contacts_df = pd.read_excel("202802c.xlsx")  # Get the Excel file
+contacts_df = pd.read_excel("YOU FILE HERE")  # Get the Excel file
 
 browser = webdriver.Firefox()  # Using Firefox to access
 browser.get("https://web.whatsapp.com")
@@ -33,11 +33,11 @@ time.sleep(15)  # Waiting some time to load everything and do not be so fast
 #____________________________________________________________________________________________________________
 
 
-for index, number in enumerate(contacts_df["Telefone1"], start=(skipped_rows - 1) if skipped_rows > 0 else 0):
+for index, number in enumerate(contacts_df["YOUR COLUMN HERE"], start=(skipped_rows - 1) if skipped_rows > 0 else 0):
     # Just skipping the rows I don't want to send to, while I avoid crash the code with negative indexes 
 
-    area_code = contacts_df["DDD1"][index]  # Getting the area code in every line
-    number = contacts_df['Telefone1'][index]  # Getting the right number by its index
+    area_code = contacts_df["YOUR ANOTHER COLUMN HERE"][index]  # Getting the area code in every line
+    number = contacts_df['YOUR COLUMN HERE'][index]  # Getting the right number by its index
     area_code, number = int(area_code), int(number)
     final_msg = urllib.parse.quote(std_msg)  # Transforming the message to be better usable in URLs
     
